@@ -8,9 +8,8 @@ Tools:
 Ionic Framework, Google Map API, Jquery.
 
 Cordova Plugins:
-
-a) Camera
-b) File
-c) File Transfer
-d) Console
+1. Camera
+2. File
+3. File Transfer
+4. Console
 
