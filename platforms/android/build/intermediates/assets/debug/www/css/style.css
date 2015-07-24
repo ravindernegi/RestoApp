@@ -1,0 +1,95 @@
+/* Empty. Add your own CSS if you like */
+body{color:#565658;}
+
+#map { width: 100%;  height: 100%;}
+.scroll {  height: 100%;}
+#map.mapClass{height:0;}
+.back_resto_map{border:none;}
+.logo{width:100%; margin-top:75px; margin-bottom:100px; text-align: center;}
+.logo  img{height:220px;}
+.blue_btn, .blue_btn:hover{background-color: #0099cc; border:1px solid #0099cc; color:#fff;}
+.small_logo {/*width:165px;margin:0 auto;*/}
+.small_logo img{height:44px;}
+.funnel,.bar-stable .funnel.button:hover{border:none;background:none;box-shadow: none;}
+.funnel .funnel_icon{
+
+	  background: url('../images/filter.png') scroll 0 0 no-repeat;
+  width: 28px;
+  height: 20px;
+  float: left;
+  background-size: 80% auto;
+}
+.backbg{background:#eeeeee;}
+.funnel .funnel_icon.active{
+
+	  background: url('../images/filter_active.png') scroll 0 0 no-repeat;
+  width: 28px;
+  height: 20px;
+  float: left;
+  background-size: 80% auto;
+}
+.caps{text-transform:uppercase;}
+.find_restaurants{margin-top:0px; width:100%; height:100%;margin:0 auto;position: absolute;top:0; background-color: #fff;}
+.item-input{padding:4px 2%;}
+.list .item{border:none; margin-bottom: 20px;}
+.list .item.item-input input , .list .item.item-input   textarea{margin:0;padding:0;}
+.list .item.item-input input.pin {
+  background-image: url('../images/search.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto 60%;
+}
+.button.button-stable{border-color: #3f4045; border-radius: 0;font-size: 14px;background-color: #fff;}
+.button.button-stable.activated{border-color: #3f4045;background-color: #3f4045;color:#fff;}
+.gps_buttons button{float:left;width:49%; color:#565658;}
+.gps_buttons button:first-child{margin-right: 2%; }
+.hideTag{display: none;}
+.detail_popup{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  border-top: 1px solid #ccc; }
+.detail_popup .user_icon{height:35px;}
+.detail_popup .detail_icon{height:48px;}
+.detail_popup h2{font-size: 12px;margin: 0 0 4px 0;}
+.detail_popup p{margin:0;padding:0; line-height: 18px;}
+.detail_popup p span{font-size: 12px;}
+.main_img img{ width:100%;}
+.row.margin_top_10{margin-top:10px;}
+.review .row .thumb{text-align: center;margin-right: 2%;}
+.review .row .message{border:1px solid #ccc;}
+.review .row img {height:40px; margin: 0 auto;}
+.review .row h6{margin-bottom: 0;margin-top: 4px;font-style: italic; color: #999;text-align: center;}
+a{color:#11c1f3;text-decoration: none;}
+.resto_detail h5{font-size: 16px;}
+.resto_detail p{ font-size: 12px;}
+.resto_detail p span{ font-size: 14px;color:#999;font-weight:normal;text-transform: capitalize;}
+.resto_list .row .thumb{text-align: center;margin-right: 2%;}
+.resto_list .row .thumb img{width:50px;}
+.resto_list .row .thumb_detail img{width:40px;}
+input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly]
+{  background-color: inherit;}
+
+.sample-show-hide {
+  padding:10px;
+  
+  background:white;
+  
+}
+
+.sample-show-hide {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.sample-show-hide.ng-hide {
+  opacity:0;
+}
+
+@media screen and (min-width: 320px) and (max-width: 500px) {
+			.logo{ margin-top:20px;}		   
+		   .logo  img{height:150px;}
+	
+}

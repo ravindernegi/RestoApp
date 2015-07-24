@@ -1,0 +1,54 @@
+<ion-view>  
+	<ion-header-bar class="bar-stable" >
+		<button class="button  back_resto_map "  ng-click="BackONResto()" >
+		    <i class="icon ion-ios-arrow-back " ng-class="funnelCls"></i> Back
+		  </button>
+	     <h1 class="title small_logo"><img src="images/small_logo.png" /></h1>
+	</ion-header-bar>
+    <ion-content>
+	<!-- resto detail page -->
+
+		<div class="resto_detail_page"  style="padding:0;">
+			<div class="main_img"><img src ="{{(resto.picture[0]) && resto.picture[0].getUrl({maxWidth:'',maxHeight:'350'})  || 'images/food-grey.png'}}" /></div>
+		    <div class="row">
+		    	<div class="col col-80">
+		    		<span style="display: block; width: 146px; height: 20px; background: url(images/rating.png) 0 0; background-size: auto 40px;">
+				   <span style="display: block; width: {{resto.rating_value}}%; height: 20px; background: url(images/rating.png) 0 -21px; background-size:auto 40px ; "></span>
+				</span>
+		    	</div>
+		    	<div class="col col-20">{{resto.price_level}}</div>
+		    	
+		    </div>
+		    <div class="row resto_detail" style="border-bottom:1px solid #ccc;">
+		   		<div class="col">
+		   			<h5 style="margin-top:0;">{{resto.name}}</h5>
+		    		<p style="line-height:16px;">{{resto.address}}<br/>
+		    			<span>{{resto.types}}</span>
+		    		</p>
+		    		<p><a href="#">www.restaurant.com</a></p>
+		    	</div>
+		    </div>	
+
+		    <div class="review">
+			    <div class="row margin_top_10">
+			    	<div class="col col-20 thumb"><img src="images/user_dark.png"> <h6>John Deo</h6></div>
+			    	<div class="col col-75 message">Best taste in town. Nothing compared to it really!!!!</div>
+			    </div>
+			    <div class="row margin_top_10">
+			    	<div class="col col-20 thumb"><img src="images/user_dark.png"> <h6>John Deo</h6></div>
+			    	<div class="col col-75 message">Best taste in town. Nothing compared to it really!!!!</div>
+			    </div>	
+			    <div class="row margin_top_10">
+			    	<div class="col col-20 thumb"><img src="images/user_dark.png"> <h6>John Deo</h6></div>
+			    	<div class="col col-75 message">Best taste in town. Nothing compared to it really!!!!</div>
+			    </div>	
+			</div>  	
+		</div>	
+		<!-- end resto detail page -->
+   
+
+		
+	
+
+</ion-content>
+</ion-view>

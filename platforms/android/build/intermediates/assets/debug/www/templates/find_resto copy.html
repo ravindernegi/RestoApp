@@ -1,0 +1,119 @@
+<ion-view>  
+	<ion-header-bar class="bar-stable" >
+		<button class="button  back_resto_map "  ng-click="BackONResto()" ng-class="isBackShown">
+		    <i class="icon ion-ios-arrow-back " ng-class="funnelCls"></i> Back
+		  </button>
+	     <h1 class="title small_logo"><img src="images/small_logo.png" /></h1>
+		  <button class="button funnel "  ng-click="openFilter()" ng-class="isFunnelShown">
+		    <i class="icon funnel_icon " ng-class="funnelCls"></i>
+		  </button>
+	</ion-header-bar>
+    <ion-content>
+
+
+	    <!--for map -->
+	    <div id="map" ng-class="isMapShown"></div>
+		<!--End map-->
+
+		<!--start find resto -->
+   		<div class="find_restaurants sample-show-hide" ng-show="isRestaurantsBoxShown">
+	   		<p class="center" style="text-align:center;padding-top:15px;color:#999;"> Find a Restaurants</p>
+			
+			<div class="list list-inset gps_buttons">
+
+				<div class="item range range ">
+				 	<button class="button button-stable" ng-class="LocationBox" ng-click="openLocationBox()">Enter Location</button>	
+				 	<button class="button button-stable" ng-class="GPSLocation" ng-click="openGPSLocation()" >Use my GPS</button>	
+				</div>		
+			    <label class="item item-input backbg ">
+			        <input type="text" placeholder="Location" ng-model="mapObj.Location"  ng-disabled="BoxLocationDisabled" class="pin " >
+			    </label>
+
+			  	<label class="item item-input backbg">
+			    	<input type="text" placeholder="Destination" ng-model="mapObj.Destination" class="pin">
+			  	</label>
+			 
+			 	<label class="item item-input backbg">
+			    	<input type="text" placeholder="Include Keywords" ng-model="mapObj.include_keywords">
+			  	</label>
+			  
+			  	<label class="item item-input backbg">
+			    	<input type="text" placeholder="Exculde Keywords" ng-model="mapObj.exclude_keywords">
+			  	</label> 	
+
+			 	<div class="item range range">
+			    	<i class="icon " style="font-size: 13px;  margin-right: 11px;">$<span ng-bind="mapObj.price_range">5</span></i>
+			    	<input type="range" name="price_range" ng-model="mapObj.price_range" min="5" max="500" >
+			    	<i class="icon " style="font-size: 13px; ">$500</i>
+			  	</div>
+			  	<div class="item range range">
+			    	<i class="icon " style="font-size: 13px;  margin-right: 11px;" ><span ng-bind="mapObj.mile_range">0.1</span> mi</i>
+			    	<input type="range" name="mile_range" ng-model="mapObj.mile_range" min="0" max="20" >
+			    	<i class="icon " style="font-size: 13px; ">20 mi</i>
+			  	</div>
+			
+			</div>
+			<div class="ist list-inset " >
+
+				<button class="button button-full  blue_btn caps"  ng-click="findResto()">
+				 Find Restaurants 
+				</button>
+			</div>
+		
+		</div>
+		<!-- find resto -->
+		
+		<!-- resto popup detail -->
+		<div class="row detail_popup sample-show-hide" ng-show="isRestaurantsDetailPopupShown">
+			<div class="col"><img src= "images/user.png" class="user_icon"/></div>
+			<div class="col col-90">
+				<h2>{{displayOptionObj.name}} </h2>
+				<p>{{displayOptionObj.vicinity}}<br/> <span></span></p>
+
+			</div>
+			<div class="col"><img src= "images/detail.png" class="detail_icon" ng-click="openDetailPage()"/></div>
+		</div>
+		<!-- end resto popup detail-->	
+
+		<!-- resto detail page -->
+
+		<div class="resto_detail_page sample-show-hide" ng-show="isRestaurantsDetailShown" style="padding:0;">
+			<div class="main_img"><img src ="{{(resto.picture[0]) && resto.picture[0].getUrl({maxWidth:'',maxHeight:'350'})  || 'images/food-grey.png'}}" /></div>
+		    <div class="row">
+		    	<div class="col col-80">
+		    		<span style="display: block; width: 146px; height: 20px; background: url(images/rating.png) 0 0; background-size: auto 40px;">
+				   <span style="display: block; width: {{resto.rating_value}}%; height: 20px; background: url(images/rating.png) 0 -21px; background-size:auto 40px ; "></span>
+				</span>
+		    	</div>
+		    	<div class="col col-20">{{resto.price_level}}</div>
+		    	
+		    </div>
+		    <div class="row resto_detail" style="border-bottom:1px solid #ccc;">
+		   		<div class="col">
+		   			<h5 style="margin-top:0;">{{resto.name}}</h5>
+		    		<p style="line-height:16px;">{{resto.address}}<br/>
+		    			<span>{{resto.types}}</span>
+		    		</p>
+		    		<p><a href="#">www.restaurant.com</a></p>
+		    	</div>
+		    </div>	
+
+		    <div class="review">
+			    <div class="row margin_top_10">
+			    	<div class="col col-20 thumb"><img src="images/user_dark.png"> <h6>John Deo</h6></div>
+			    	<div class="col col-75 message">Best taste in town. Nothing compared to it really!!!!</div>
+			    </div>
+			    <div class="row margin_top_10">
+			    	<div class="col col-20 thumb"><img src="images/user_dark.png"> <h6>John Deo</h6></div>
+			    	<div class="col col-75 message">Best taste in town. Nothing compared to it really!!!!</div>
+			    </div>	
+			    <div class="row margin_top_10">
+			    	<div class="col col-20 thumb"><img src="images/user_dark.png"> <h6>John Deo</h6></div>
+			    	<div class="col col-75 message">Best taste in town. Nothing compared to it really!!!!</div>
+			    </div>	
+			</div>  	
+		</div>	
+		<!-- end resto detail page -->
+		
+	</ion-content>
+</ion-view>

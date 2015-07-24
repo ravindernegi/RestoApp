@@ -1,0 +1,30 @@
+<ion-view>  
+	<ion-header-bar class="bar-stable" >
+	     <h1 class="title small_logo"><img src="images/small_logo.png" /></h1>
+		  <button class="button funnel "  ui-sref="find_resto">
+		    <i class="icon funnel_icon " ></i>
+		  </button>
+	</ion-header-bar>
+    <ion-content>
+		
+	
+    	<div id="map" scroll="false" data-tap-disabled="true"></div>
+   
+		<!-- resto popup detail -->
+		<div class="row detail_popup sample-show-hide" ng-show="isRestaurantsDetailPopupShown">
+			<div class="col col-20"><img src= "images/user.png" class="user_icon"/></div>
+			<div class="col col-60">
+				<h2>{{displayOptionObj.name}} </h2>
+				<p>{{displayOptionObj.vicinity}}<br/> <span></span></p>
+
+			</div>
+			<div class="col col-20"><img src= "images/detail.png" class="detail_icon" ng-click="openDetailPage(resto)"/></div>
+		</div>
+		<!-- end resto popup detail-->	
+
+		
+   
+	
+
+</ion-content>
+</ion-view>

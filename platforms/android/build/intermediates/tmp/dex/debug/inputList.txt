@@ -1,0 +1,2 @@
+/Users/ravi/Documents/Apps/ionic/mapApi/platforms/android/build/intermediates/classes/debug
+/Users/ravi/Documents/Apps/ionic/mapApi/platforms/android/build/intermediates/pre-dexed/debug/classes-db34e936551ef5b511783162dfa5d9c5cbb17dd3.jar
