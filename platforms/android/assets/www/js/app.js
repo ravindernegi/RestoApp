@@ -45,6 +45,12 @@ mapApp.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: "templates/resto_list.html"
        
     })
+    
+    .state('resto_detail', {
+        url: "/resto_detail",
+        templateUrl: "templates/resto_detail.html"
+       
+    })
 
     .state('find_resto', {
         url: "/find_resto",

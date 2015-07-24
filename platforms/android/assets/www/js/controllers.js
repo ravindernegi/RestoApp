@@ -74,22 +74,9 @@ mapApp.controller('FindRestoController', function($scope, $ionicLoading,$ionicPl
 
     };
 
-    $scope.openFilter = function(){
+   
 
-
-
-    };
-
-    $scope.openDetailPage = function (){
-
-
-    };
-
-    $scope.BackONResto = function (){
-
-
-
-    };    
+   
 
 
 
@@ -158,6 +145,8 @@ mapApp.controller('FindRestoController', function($scope, $ionicLoading,$ionicPl
 			  		priceLevelCt += '$';
 			  }
 			  $scope.resto.price_level  = 	priceLevelCt;
+			  
+			  localStorage.test = 'ss';
 			
             $scope.$apply();
         });
@@ -196,9 +185,10 @@ mapApp.controller('FindRestoController', function($scope, $ionicLoading,$ionicPl
 
 });
 
-mapApp.controller('MapCtrl', function ($scope) {
+mapApp.controller('MapCtrl', function ($scope, $state) {
 
      $scope.isRestaurantsDetailPopupShown=false; 
+     $scope.resto = {};
       
     var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
 
@@ -231,7 +221,37 @@ mapApp.controller('MapCtrl', function ($scope) {
           // alert('ss');
              $scope.isRestaurantsDetailPopupShown=true;
              $scope.displayOptionObj = place;
-            	  $scope.$apply();
+             
+             $scope.resto.name  =  place.name;
+		  $scope.resto.address  = place.vicinity;
+		  
+		  
+		  var restoTypes = '';
+		  for(var ct = 0; ct < place.types.length;ct++){
+		  
+		  		var restoTypesName = place.types[ct];
+				restoTypes += restoTypesName+', ';
+		  }
+		  
+		  $scope.resto.types  = restoTypes.replace(/,\s*$/, "");;
+		  
+		  //.toUpperCase()
+		  
+		
+		  
+		  $scope.resto.picture  = place.photos;
+		  
+		  var totalRating = (parseInt(place.rating)/5) * 100;
+			  
+			  $scope.resto.rating_value  = totalRating;
+			  var priceLevelCt = '';
+			  for(var ct = 0; ct < place.price_level;ct++){
+			  		priceLevelCt += '$';
+			  }
+			  $scope.resto.price_level  = 	priceLevelCt;
+             
+             
+             $scope.$apply();
           });
     }
 
@@ -270,6 +290,20 @@ mapApp.controller('MapCtrl', function ($scope) {
 
            
     };
+    
+    
+     $scope.openDetailPage = function (restoObj){
+		localStorage.testSss = 'ss';
+		$scope.resto = restoObj;
+		
+		$state.go('resto_detail');
+    };
+    
+    $scope.BackONResto = function (){
+
+
+
+    }; 
     
     
     
