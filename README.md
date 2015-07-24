@@ -1,7 +1,7 @@
 # Resto App
 Description :
 
-The build by Ionic Framework. The app is for android and IOS. The app using google Map API .
+The app is built with Ionic Framework. The app is for android and IOS. The app using google Map API .
 
 Tools:
 
