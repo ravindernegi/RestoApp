@@ -4,3 +4,9 @@
 node_modules/
 platforms/
 plugins/
+/my-release-key.keystore
+/android-release-unsigned.apk
+/FindResto.apk
+/platforms/*.DS_Store
+/platforms/ios
+/platforms/android
